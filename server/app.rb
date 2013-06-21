@@ -10,18 +10,6 @@ S3_BUCKET='/uploadtestbucket'
 EXPIRE_TIME=(60 * 5) # 5 minutes
 S3_URL='http://s3.amazonaws.com'
 
-get '/' do
-  send_file 'index.html'
-end
-
-get '/styles.css' do
-  send_file 'styles.css'
-end
-
-get '/app.js' do
-  send_file 'app.js'
-end
-
 get '/signput' do
   object_name = "/#{params['name']}"
 
