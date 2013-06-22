@@ -1,0 +1,3 @@
+[submodule "SignedS3UploadExample/AFNetworking"]
+	path = SignedS3UploadExample/AFNetworking
+	url = https://github.com/AFNetworking/AFNetworking.git
