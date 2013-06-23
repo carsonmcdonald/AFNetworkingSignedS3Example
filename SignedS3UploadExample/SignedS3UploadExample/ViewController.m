@@ -14,16 +14,39 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [super viewWillAppear:animated];
+    
+    self.uploadButton.enabled = NO;
+    self.progressView.hidden = YES;
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)selectImageAction:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    
+    imagePicker.allowsEditing = NO;
+    imagePicker.delegate = self;
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:imagePicker animated:YES completion:^{
+        self.uploadButton.enabled = NO;
+        self.selectedImageView.image = nil;
+    }];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    self.selectedImageView.image = info[UIImagePickerControllerOriginalImage];
+    
+    self.uploadButton.enabled = YES;
+        
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)uploadImageAction:(id)sender
+{
 }
 
 @end
