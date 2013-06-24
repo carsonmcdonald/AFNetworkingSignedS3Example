@@ -22,5 +22,5 @@ get '/signput.json' do
   string_to_sign = "PUT\n\n#{mime_type}\n#{expires}\n#{amz_headers}\n#{S3_BUCKET}#{object_name}"
   sig = CGI::escape(Base64.strict_encode64(OpenSSL::HMAC.digest('sha1', S3_SECRET, string_to_sign)))
 
-  json :url => CGI::escape("#{S3_URL}#{S3_BUCKET}#{object_name}?AWSAccessKeyId=#{S3_KEY}&Expires=#{expires}&Signature=#{sig}")
+  json :url => "#{S3_URL}#{S3_BUCKET}#{object_name}?AWSAccessKeyId=#{S3_KEY}&Expires=#{expires}&Signature=#{sig}"
 end
