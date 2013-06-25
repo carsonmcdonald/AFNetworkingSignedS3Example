@@ -25,11 +25,7 @@
                                     <action selector="uploadImageAction:" destination="2" eventType="touchUpInside" id="BEF-fS-j3a"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rbZ-SL-ELR">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="LLC-FZ-rf0"/>
-                                </constraints>
-                            </progressView>
+                            <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rbZ-SL-ELR"/>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Dr-HG-LTW">
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -50,21 +46,35 @@
                                     <action selector="selectImageAction:" destination="2" eventType="touchUpInside" id="cd2-jW-Xvf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dD-Vk-NlI">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="12O-3o-Xbe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rbZ-SL-ELR" firstAttribute="centerX" secondItem="FD8-U8-IDs" secondAttribute="centerX" type="default" id="0KI-B2-tU8"/>
                             <constraint firstItem="sAH-dO-XIs" firstAttribute="centerX" secondItem="9Dr-HG-LTW" secondAttribute="centerX" type="default" id="0oh-KX-wp6"/>
-                            <constraint firstAttribute="bottom" secondItem="FD8-U8-IDs" secondAttribute="bottom" constant="111" id="Ktm-BU-psu"/>
-                            <constraint firstAttribute="bottom" secondItem="rbZ-SL-ELR" secondAttribute="bottom" constant="86" id="TUA-q4-IG9"/>
-                            <constraint firstItem="sAH-dO-XIs" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="eJs-69-KwZ"/>
+                            <constraint firstItem="FD8-U8-IDs" firstAttribute="centerX" secondItem="rbZ-SL-ELR" secondAttribute="centerX" type="default" id="7AR-Lo-f2I"/>
+                            <constraint firstItem="9dD-Vk-NlI" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="AeD-Ti-hax"/>
+                            <constraint firstItem="rbZ-SL-ELR" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Hlc-3d-AXL"/>
+                            <constraint firstAttribute="trailing" secondItem="9dD-Vk-NlI" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Lpg-Ar-s7D"/>
+                            <constraint firstAttribute="bottom" secondItem="rbZ-SL-ELR" secondAttribute="bottom" constant="78" id="Ydo-KX-vY6"/>
                             <constraint firstItem="FD8-U8-IDs" firstAttribute="centerX" secondItem="9Dr-HG-LTW" secondAttribute="centerX" type="default" id="emR-x4-IJF"/>
+                            <constraint firstAttribute="bottom" secondItem="9dD-Vk-NlI" secondAttribute="bottom" constant="74" id="gVh-BA-Hga"/>
+                            <constraint firstAttribute="bottom" secondItem="FD8-U8-IDs" secondAttribute="bottom" constant="111" id="mQt-uH-y0O"/>
                             <constraint firstItem="9Dr-HG-LTW" firstAttribute="top" secondItem="3" secondAttribute="top" constant="137" id="oet-xD-efn"/>
+                            <constraint firstAttribute="trailing" secondItem="rbZ-SL-ELR" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="onW-ta-dXL"/>
                             <constraint firstItem="sAH-dO-XIs" firstAttribute="top" secondItem="3" secondAttribute="top" constant="79" id="te6-GS-VaN"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="progressLabel" destination="9dD-Vk-NlI" id="7yV-vb-1uy"/>
                         <outlet property="progressView" destination="rbZ-SL-ELR" id="vbT-dO-kVC"/>
+                        <outlet property="selectImageButton" destination="sAH-dO-XIs" id="K4D-to-AF8"/>
                         <outlet property="selectedImageView" destination="9Dr-HG-LTW" id="gip-Jf-ffv"/>
                         <outlet property="uploadButton" destination="FD8-U8-IDs" id="Ugo-Ae-hPl"/>
                     </connections>
@@ -82,7 +92,9 @@
             <relationships>
                 <relationship kind="action" name="selectImageAction:"/>
                 <relationship kind="action" name="uploadImageAction:"/>
+                <relationship kind="outlet" name="progressLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="progressView" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="selectImageButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="selectedImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="uploadButton" candidateClass="UIButton"/>
             </relationships>

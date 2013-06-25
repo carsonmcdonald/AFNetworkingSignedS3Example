@@ -13,8 +13,10 @@
 - (IBAction)selectImageAction:(id)sender;
 - (IBAction)uploadImageAction:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *selectImageButton;
 @property (weak, nonatomic) IBOutlet UIImageView *selectedImageView;
 @property (weak, nonatomic) IBOutlet UIButton *uploadButton;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+@property (weak, nonatomic) IBOutlet UILabel *progressLabel;
 
 @end
